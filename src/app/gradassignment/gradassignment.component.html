@@ -1,0 +1,62 @@
+<head>
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-alpine.css">
+</head>
+<!--<header>WELCOME  TO AU PORTAL</header>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-nav">
+        <a class="nav-link"  routerLink="/gradassignment">Assignments</a>
+        <a class="nav-link" routerLink="/gradproject">Projects</a>
+        <a class="nav-link" routerLink="/scoreboard">Score Board</a>
+        <form class="form-inline">
+        <a  class="nav-link" routerLink="/">LogOut</a>
+    </form>
+    </div>
+</nav>-->
+
+
+<div style="height: 100vh;">
+    <mat-toolbar color="basic">
+       
+        <button mat-flat-button class="opp" color="accent" routerLink='/gradassignment'>Assignments</button>
+        <span class="example-spacer1"></span>
+        <button mat-flat-button  class="opp" color="accent" routerLink='/gradproject' >Projects</button>
+        <span class="example-spacer1"></span>
+        <button mat-flat-button class="opp" color="accent" routerLink='/scoreboard' >Score Board</button>
+        <span class="example-spacer1"></span>
+        <button mat-flat-button class="opp" color="accent" routerLink='/gradtrends' >Trends</button>
+        <span class="example-spacer"></span>
+        <button mat-button [matMenuTriggerFor]="menu">sandhiyas198@gmail.com<mat-icon >person
+        </mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>sandhiyas198@gmail.com</button>
+        </mat-menu>
+       <span class="example-spacer1"></span>
+        <button mat-flat-button  target="_blank" routerLink="/">Logout</button>
+    </mat-toolbar>  
+  <div>
+<body style="background-color:powderblue;">
+<div class="center">
+    <p style="text-align:center">Upload Assignment in the given Google Drive Link</p>
+    
+    <a href="https://drive.google.com/drive/u/3/folders/1455gLnL8_qJK0CPgY_ASrefJHzOTCcX2">upload files</a>
+
+</div>
+
+<br> <br> <br>
+
+
+<ag-grid-angular
+    style="width: 100%; height: 300px;"
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    (rowClicked)='onRowClicked($event)'
+    >
+</ag-grid-angular>
+</body>
+
+
+
+

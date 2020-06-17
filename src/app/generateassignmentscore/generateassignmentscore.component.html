@@ -1,0 +1,33 @@
+<head>
+	<title>Bootstrap Example</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  
+  <div class="container">
+	<h2>Mark Update for Project</h2>
+	<form >
+	  
+        <div class="form-group">
+            <label for="assignment_mark">Total:</label>
+            <input type="text" class="form-control"  placeholder="mark for assignment" name="assignment_mark"  [(ngModel)]="candidate.assignment_mark"  required
+            #assignment_mark="ngModel" [class.is-invalid]="assignment_mark.invalid && assignment_mark.touched">
+            <small class="text-danger" [class.d-none]="assignment_mark.valid || assignment_mark.untouched">Enter the Score </small>
+             </div> 
+
+
+                      
+    <div>
+        <button class="btn btn-success" (click)="update()"> Submit </button>
+      </div>
+
+      </form>
+  
+  
+
+
+

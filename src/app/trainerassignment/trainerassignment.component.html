@@ -1,0 +1,59 @@
+<!--<header>WELCOME  TO AU PORTAL</header>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-nav">
+        <a class="nav-link"  routerLink="/candidate">Candidate List</a>
+        <a class="nav-link" routerLink="/trainerproject">Project</a>
+        <a class="nav-link" routerLink="/trainerassignment">Assignment</a>
+        <form class="form-inline">
+        <a  class="nav-link" routerLink="/">LogOut</a>
+    </form>
+    </div>
+    
+</nav>-->
+<div style="height: 100vh;">
+    <mat-toolbar color="basic">
+       
+        <button mat-flat-button class="opp" color="accent" routerLink='/candidate'>Candidate List</button>
+        <span class="example-spacer1"></span>
+        <button mat-flat-button  class="opp" color="accent" routerLink='/trainerproject' >Project</button>
+        <span class="example-spacer1"></span>
+        <button mat-flat-button class="opp" color="accent" routerLink='/trainerassignment' >Assignment</button>
+        <span class="example-spacer1"></span>
+        <button mat-flat-button class="opp" color="accent" routerLink='/trends' >Trends</button>
+        <span class="example-spacer"></span>
+        <button mat-button [matMenuTriggerFor]="menu">{{username}} <mat-icon >person
+        </mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>{{email}}</button>
+        </mat-menu>
+       <span class="example-spacer1"></span>
+        <button mat-flat-button  target="_blank" routerLink="/">Logout</button>
+    </mat-toolbar>  
+  <div>
+
+    
+    <div class="test-header">
+        <div class="centered" class="example-section">
+        
+        <button  class="btn btn-primary mr-2" (click)="createassignment()">Create Assignment</button>
+        <button class="btn btn-primary mr-2" (click)="viewsubmit()">View Submissions</button>
+</div>
+</div>
+
+  
+
+   <br>
+
+<ag-grid-angular
+    style="width: 1000px; height: 750px;"
+    class="ag-theme-alpine"
+    (gridReady)="onGridReady($event )"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [enableSorting]="true"
+   
+    [animateRows]="true"
+    (rowClicked)='onRowClicked($event)'
+    >
+</ag-grid-angular>
+

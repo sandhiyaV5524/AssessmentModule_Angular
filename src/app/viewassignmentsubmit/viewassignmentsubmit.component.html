@@ -1,0 +1,110 @@
+
+<div style="height: 100vh;">
+  <mat-toolbar color="basic">
+     
+      <button mat-flat-button class="opp" color="accent" routerLink='/candidate'>Candidate List</button>
+      <span class="example-spacer1"></span>
+      <button mat-flat-button  class="opp" color="accent" routerLink='/trainerproject' >Project</button>
+      <span class="example-spacer1"></span>
+      <button mat-flat-button class="opp" color="accent" routerLink='/trainerassignment' >Assignment</button>
+      <span class="example-spacer1"></span>
+      <button mat-flat-button class="opp" color="accent" routerLink='/trends' >Trends</button>
+      <span class="example-spacer"></span>
+      <button mat-button [matMenuTriggerFor]="menu">{{username}}<mat-icon >person
+      </mat-icon></button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>{{email}}</button>
+      </mat-menu>
+     <span class="example-spacer1"></span>
+      <button mat-flat-button  target="_blank" routerLink="/">Logout</button>
+  </mat-toolbar>  
+<div>
+
+
+
+
+
+  <div class="mat-elevation-z8">
+    <mat-table [dataSource]="dataSource"  matSort>
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef  mat-sort-header>assignment id</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef  mat-sort-header>Assignment title</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.title}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="grad_mailid">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>grad_mail</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.grad_mailid}}</mat-cell>
+      </ng-container>
+     
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-icon-button (click)="updatescore(row.id,row.title,row.grad_mailid)"><mat-icon>edit</mat-icon></button>
+          
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="loading">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+          Loading data...
+        </mat-footer-cell>
+      </ng-container>
+      <ng-container matColumnDef="noData">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+          No data.
+        </mat-footer-cell>
+      </ng-container>
+      
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':dataSource!=null}"></mat-footer-row>
+      <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource!=null && dataSource.data.length==0)}"></mat-footer-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+  </div>
+<!--
+<header>WELCOME  TO AU PORTAL</header>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-nav">
+        <a class="nav-link"  routerLink="/candidate">Candidate List</a>
+        <a class="nav-link" routerLink="/trainerproject">Project</a>
+        <a class="nav-link" routerLink="/trainerassignment">Assignment</a>
+        
+        <form class="form-inline">
+        <a  class="nav-link" routerLink="/login">LogOut</a>
+    </form>
+    </div>
+</nav>
+
+<div class="col-md-6">
+    <p id="welcomenote">Welcome  !!!</p>
+    <table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Assignment Id</th>
+        <th>Grad mailid</th>
+        <th>Assignment Title</th>
+      
+    
+    
+    
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ac of assign_comp">
+            <td>{{ac.id}}</td>
+            <td>{{ac.grad_mailid}}</td>
+            <td>{{ac.title}}</td>
+           
+           <td><button class="btn btn-danger" (click)="updatescore(ac.grad_mailid)" routerLink="/generateassignmentscore"> update-score </button></td>
+          
+            
+            </tr>
+    </tbody>
+      </table>
+  
+    </div>
+
+-->

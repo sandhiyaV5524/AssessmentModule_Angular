@@ -1,0 +1,108 @@
+
+<!--<header>WELCOME  TO AU PORTAL</header>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-nav">
+        <a class="nav-link"  routerLink="/candidate">Candidate List</a>
+        <a class="nav-link" routerLink="/trainerproject">Project</a>
+        <a class="nav-link" routerLink="/trainerassignment">Assignment</a>
+        
+        <form class="form-inline">
+        <a  class="nav-link" routerLink="/">LogOut</a>
+    </form>
+    </div>
+</nav>-->
+
+<div style="height: 100vh;">
+  <mat-toolbar color="basic">
+     
+      <button mat-flat-button class="opp" color="accent" routerLink='/candidate'>Candidate List</button>
+      <span class="example-spacer1"></span>
+      <button mat-flat-button  class="opp" color="accent" routerLink='/trainerproject' >Project</button>
+      <span class="example-spacer1"></span>
+      <button mat-flat-button class="opp" color="accent" routerLink='/trainerassignment' >Assignment</button>
+      <span class="example-spacer1"></span>
+      <button mat-flat-button class="opp" color="accent" routerLink='/trends' >Trends</button>
+      <span class="example-spacer"></span>
+      <button mat-button [matMenuTriggerFor]="menu">{{username}} <mat-icon >person
+      </mat-icon></button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>{{email}}</button>
+      </mat-menu>
+     <span class="example-spacer1"></span>
+      <button mat-flat-button  target="_blank" routerLink="/">Logout</button>
+  </mat-toolbar>  
+
+<div>
+  <div class="mat-elevation-z8">
+    <mat-table [dataSource]="dataSource"  matSort>
+      <ng-container matColumnDef="mailId">
+        <mat-header-cell *matHeaderCellDef  mat-sort-header>Submitted By</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.mailId}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef  mat-sort-header>Project Title</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.title}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="completion">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Completion:%</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.completion}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Testing">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Testing</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.Testing}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Code_Coverage">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Coverage:%</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.Code_Coverage}}</mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-icon-button (click)="updatescore(row.mailId,row.title)"><mat-icon>edit</mat-icon></button>
+          
+        </mat-cell>
+      </ng-container>
+     
+     
+      
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+     
+    </mat-table>
+     
+      
+     
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+  </div>
+
+<!--<div class="col-md-6">
+    <p id="welcomenote">Welcome  !!!</p>
+    <table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Submitted by</th>
+        <th>Project Title</th>
+      <th>Project Completion</th>
+      <th>Testing Part</th>
+    <th>Code Coverage</th>
+    
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pro_com of pro_comp">
+            <td>{{pro_com.mailId}}</td>
+            <td>{{pro_com.title}}</td>
+            <td>{{pro_com.completion}}</td>
+            <td>{{pro_com.Testing}}</td>
+           <td>{{pro_com.Code_Coverage}}</td>
+           <td><button class="btn btn-danger" (click)="updatescore(pro_com.mailId)" routerLink="/generateprojectscore"> update-score </button></td>
+           
+            </tr>
+    </tbody>
+      </table>
+  
+    </div>-->
+

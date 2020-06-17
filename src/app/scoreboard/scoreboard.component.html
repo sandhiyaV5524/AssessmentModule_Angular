@@ -1,0 +1,73 @@
+<!--<header>WELCOME  TO AU PORTAL</header>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-nav">
+        <a class="nav-link"  routerLink="/gradassignment">Assignments</a>
+        <a class="nav-link" routerLink="/gradproject">Projects</a>
+        <a class="nav-link" routerLink="/scoreboard">Score Board</a>
+        <form class="form-inline">
+        <a  class="nav-link" routerLink="/">LogOut</a>
+    </form>
+    </div>
+</nav>-->
+
+
+<div style="height: 100vh;">
+    <mat-toolbar color="basic">
+       
+        <button mat-flat-button class="opp" color="accent" routerLink='/gradassignment'>Assignments</button>
+        <span class="example-spacer1"></span>
+        <button mat-flat-button  class="opp" color="accent" routerLink='/gradproject' >Projects</button>
+        <span class="example-spacer1"></span>
+        <button mat-flat-button class="opp" color="accent" routerLink='/scoreboard' >Score Board</button>
+        <span class="example-spacer1"></span>
+        <button mat-flat-button class="opp" color="accent" routerLink='/gradtrends' >Trends</button>
+        <span class="example-spacer"></span>
+        <button mat-button [matMenuTriggerFor]="menu">sandhiyas198@gmail.com <mat-icon >person
+        </mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>sandhiyas198@gmail.com</button>
+        </mat-menu>
+       <span class="example-spacer1"></span>
+        <button mat-flat-button  target="_blank" routerLink="/">Logout</button>
+    </mat-toolbar>  
+  <div>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <h3>Your Profile and Performance!!!!{{comp2Val}}</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="well well-sm">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <img src="http://placehold.it/380x500" alt="" class="img-rounded img-responsive" />
+                        </div>
+                        <div class="col-sm-6 col-md-8">
+                            <h4>
+                                {{can.name}}</h4>
+                           
+                            <p>
+                                <i class="glyphicon glyphicon-user"></i>{{can.emp_no}}
+                                <br /><br />
+                                <i class="glyphicon glyphicon-envelope"></i>{{can.emailId}}
+                                <br /><br />
+                                <p>Assignment Mark:
+                                    <span class="glyphicon glyphicon-stats"><b> {{can.assignment_mark}}</b></span></p> 
+                                    <br /><br />
+                                <p>Project Mark:
+                                     <span class="glyphicon glyphicon-stats"><b> {{can.project_mark}}</b></span></p>    
+                               
+                            <!-- Split button -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    

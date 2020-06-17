@@ -1,0 +1,65 @@
+
+
+
+<div class="col-md-6">
+    <h2 class="text-center">Project Submission</h2>
+    <form>
+       
+    
+       <!-- <div class="form-group">
+            <label for="completion">Hero Power</label>
+            <select class="form-control" id="completion"
+                    required
+                    [(ngModel)]="pro_com.completion" name="completion"
+                    #completion="ngModel">
+              <option *ngFor="let pow of powers" [value]="completion">{{pow}}</option>
+            </select>
+            <div [hidden]="completion.valid || completion.pristine" class="alert alert-danger">
+              Power is required
+            </div>
+          </div>-->
+
+
+          <div class="form-group">
+            <label>Completion:</label>
+            <select required #completion="ngModel" [class.is-invalid]="completion.invalid && completion.touched" class="custom-select" name="completion" [(ngModel)]="pro_com.completion">
+                <option *ngFor="let j of Complete">{{j}}</option>
+            </select>
+            <small class="text-danger" [class.d-none]="completion.valid || completion.untouched">Please mention completion in %</small>
+        </div>
+
+        
+        <div class="form-group">
+          <label>Code-Coverage:</label>
+          <select required #cov="ngModel" [class.is-invalid]="cov.invalid && cov.touched" class="custom-select" name="cov" [(ngModel)]="pro_com.Code_Coverage">
+              <option *ngFor="let j of Complete">{{j}}</option>
+          </select>
+          <small class="text-danger" [class.d-none]="cov.valid || cov.untouched">Please mention the Code-Coverage </small>
+      </div>
+
+      <div class="form-group">
+        <label>Code-Coverage:</label>
+        <select required #test="ngModel" [class.is-invalid]="test.invalid && test.touched" class="custom-select" name="test" [(ngModel)]="pro_com.Testing">
+            <option *ngFor="let j of Test">{{j}}</option>
+        </select>
+        <small class="text-danger" [class.d-none]="test.valid || test.untouched">Please mention the testing done </small>
+    </div>
+          
+             
+        
+     
+       
+
+       
+        
+    
+    
+    <div>
+      <button class="btn btn-success" (click)="submit()">Submit</button>
+      
+    </div>
+   
+    </form>
+   
+    
+    
