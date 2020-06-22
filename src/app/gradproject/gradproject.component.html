@@ -20,12 +20,15 @@
         <span class="example-spacer1"></span>
         <button mat-flat-button class="opp" color="accent" routerLink='/scoreboard' >Score Board</button>
         <span class="example-spacer1"></span>
+         
+        <button mat-flat-button class="opp" color="accent" routerLink='/quiz' >Quiz</button>
+        <span class="example-spacer1"></span>
         <button mat-flat-button class="opp" color="accent" routerLink='/gradtrends' >Trends</button>
         <span class="example-spacer"></span>
-        <button mat-button [matMenuTriggerFor]="menu">sandhiyas198@gmail.com<mat-icon >person
+        <button mat-button [matMenuTriggerFor]="menu">{{username}}<mat-icon >person
         </mat-icon></button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>sandhiyas198@gmail.com</button>
+          <button mat-menu-item>{{email}}</button>
         </mat-menu>
        <span class="example-spacer1"></span>
         <button mat-flat-button  target="_blank" routerLink="/">Logout</button>

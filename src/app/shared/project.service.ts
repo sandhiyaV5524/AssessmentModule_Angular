@@ -12,6 +12,9 @@ import { Assignmentcompletion } from '../model/assignmentcompletion';
   providedIn: 'root'
 })
 export class ProjectService {
+  chartProjectLastdate() {
+    return this.http.get(environment.baseUrl+"enter/chartprojectlastdate");
+  }
   constructor(private http : HttpClient) { }
  
   deleteproject(pid: any) {    

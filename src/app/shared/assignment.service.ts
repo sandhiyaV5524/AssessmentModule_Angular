@@ -9,6 +9,7 @@ import { Candidate } from '../model/candidate';
   providedIn: 'root'
 })
 export class AssignmentService {
+
   constructor(private http : HttpClient) { }
   chartAssignmentLastdate() {
     return this.http.get(environment.baseUrl+"enter/chartassignmentlastdate");

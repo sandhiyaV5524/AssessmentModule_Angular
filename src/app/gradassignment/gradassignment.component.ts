@@ -21,6 +21,8 @@ export class GradassignmentComponent implements OnInit {
   columnDefs: { headerName: string; field: string; }[];
   as: Assignment;
   ac= new Assignmentcompletion(0,"","",false);
+  username=localStorage.getItem('username');
+ email=localStorage.getItem('useremail');
 
   constructor(private router:Router, private service:AssignmentService,private sharedservice:  SharedService) { }
 

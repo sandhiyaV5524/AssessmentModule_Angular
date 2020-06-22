@@ -20,6 +20,8 @@ export class GradprojectComponent implements OnInit {
   colDefs=[];
   columnDefs: { headerName: string; field: string; }[];
   pro: Project;
+ username=localStorage.getItem('username');
+email=localStorage.getItem('useremail');
   constructor(private router:Router, private service:ProjectService,private sharedservice:  SharedService) { }
 
   ngOnInit(): void{

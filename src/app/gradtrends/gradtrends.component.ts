@@ -8,13 +8,14 @@ import { AssignmentService } from '../shared/assignment.service';
   styleUrls: ['./gradtrends.component.scss']
 })
 export class GradtrendsComponent implements OnInit {
-  constructor(private service: AssignmentService) { }
+  constructor(private service: AssignmentService,private service1: ProjectService) { }
   view: any[] = [600, 400];
   trends:any;
   single;
   single2;
  
-
+  username=localStorage.getItem('username');
+ email=localStorage.getItem('useremail');
 
   showXAxis = true;
   showYAxis = true;
@@ -25,8 +26,8 @@ export class GradtrendsComponent implements OnInit {
   showYAxisLabel = true;
   yAxisLabel1 = 'Number of Assignments';
   timeline = true;
- // xAxisLabel2 = 'Last Date';
- // yAxisLabel2 = 'Number of Projects';
+  xAxisLabel2 = 'Last Date';
+ yAxisLabel2 = 'Number of Projects';
   
   colorScheme = {
     domain: ['violet','blue','green','orange','yellow']
@@ -49,6 +50,19 @@ export class GradtrendsComponent implements OnInit {
         })
       }
       this.single=data;
+    });
+
+
+    this.service1.chartProjectLastdate().subscribe((trends:any[])=> {
+      console.log(trends)
+      let data:any[]=[];
+      for (let trend of trends){
+        data.push({
+          "name":trend.project_last_date,
+          "value":trend.project_count
+        })
+      }
+      this.single2=data;
     });
 
     

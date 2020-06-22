@@ -7,5 +7,7 @@ export class Chart {
         public assign_count:number,
         public assign_last_date:String,
         public last_date:String,
+        public project_count:number,
+        public project_last_date:String
     ){}
 }
