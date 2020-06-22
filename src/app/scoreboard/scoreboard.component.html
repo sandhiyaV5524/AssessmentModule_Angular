@@ -8,7 +8,8 @@
         <a  class="nav-link" routerLink="/">LogOut</a>
     </form>
     </div>
-</nav>-->
+</nav>
+-->
 
 
 <div style="height: 100vh;">
@@ -21,21 +22,25 @@
         <button mat-flat-button class="opp" color="accent" routerLink='/scoreboard' >Score Board</button>
         <span class="example-spacer1"></span>
         <button mat-flat-button class="opp" color="accent" routerLink='/gradtrends' >Trends</button>
+        <span class="example-spacer1"></span>
+        <button mat-flat-button class="opp" color="accent" routerLink='/quizhome' >Quiz</button>
         <span class="example-spacer"></span>
-        <button mat-button [matMenuTriggerFor]="menu">sandhiyas198@gmail.com <mat-icon >person
+        <button mat-button [matMenuTriggerFor]="menu">{{username}} <mat-icon >person
         </mat-icon></button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>sandhiyas198@gmail.com</button>
+          <button mat-menu-item>{{email}}</button>
         </mat-menu>
        <span class="example-spacer1"></span>
         <button mat-flat-button  target="_blank" routerLink="/">Logout</button>
     </mat-toolbar>  
+    <!--
   <div>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
-    <h3>Your Profile and Performance!!!!{{comp2Val}}</h3>
+
+  <!--  <h3>Your Profile and Performance!!!!{{comp2Val}}</h3>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6">
@@ -60,7 +65,7 @@
                                      <span class="glyphicon glyphicon-stats"><b> {{can.project_mark}}</b></span></p>    
                                
                             <!-- Split button -->
-                            
+                       <!--     
                         </div>
                     </div>
                 </div>
@@ -71,3 +76,55 @@
     
     
     
+-->
+
+
+
+
+
+<body>
+<div class="profile-card">
+    <div clas="image-container">
+       <img src="/assets/image/bg1.jpeg" style="width: 100%;">
+       <div class="title">
+           <h2>{{can.name}}</h2>
+
+       </div>
+
+    </div>
+    <div class="main-container">
+        <p><i class="fa fa-envelope info"></i>
+            {{can.emailId}}</p>
+        <p><i class="fa fa-registered info" ></i>
+            {{can.emp_no}}</p>
+<hr>
+<p> <b><i class="fa fa-asterisk info"></i>
+    Performance
+</b></p>
+<p>Project Mark</p>
+<div class="Performance-bar">
+    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+    aria-valuemax="100" [style.width]="project()*1+'%'">{{can.project_mark}}
+    </div> 
+    </div> 
+    <p>Assignment Mark</p>
+<div class="Performance-bar">
+    <div class="progress-bar" e="progressbar" aria-valuenow="60" aria-valuemin="0"
+    aria-valuemax="100" [style.width]="assignment()*1+'%'">{{can.assignment_mark}}
+    </div> 
+    </div> 
+    <p>Quiz Mark</p>
+    <div class="Performance-bar">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+        aria-valuemax="100" [style.width]="quiz()*1+'%'">{{can.quiz_mark}}
+        </div> 
+        </div> 
+        
+
+
+
+
+    </div>
+
+</div>
+</body>

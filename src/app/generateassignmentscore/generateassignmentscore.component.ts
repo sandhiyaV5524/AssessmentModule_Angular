@@ -12,7 +12,7 @@ import { MatDialogModule,MatDialogRef } from '@angular/material/dialog';
 })
 export class GenerateassignmentscoreComponent implements OnInit {
   emailId="";
-  candidate= new Candidate(0,"","",0,0);
+  candidate= new Candidate(0,"","",0,0,0);
     
     msg ="";
    

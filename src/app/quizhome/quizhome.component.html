@@ -1,14 +1,5 @@
-<!--<header>WELCOME  TO AU PORTAL</header>
-<nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="navbar-nav">
-        <a class="nav-link"  routerLink="/gradassignment">Assignments</a>
-        <a class="nav-link" routerLink="/gradproject">Projects</a>
-        <a class="nav-link" routerLink="/scoreboard">Score Board</a>
-        <form class="form-inline">
-        <a  class="nav-link" routerLink="/">LogOut</a>
-    </form>
-    </div>
-</nav>-->
+
+
 
 
 <div style="height: 100vh;">
@@ -22,7 +13,7 @@
         <span class="example-spacer1"></span>
         <button mat-flat-button class="opp" color="accent" routerLink='/gradtrends' >Trends</button>
         <span class="example-spacer1"></span>
-        <button mat-flat-button class="opp" color="accent" routerLink='/quiz' >Quiz</button>
+        <button mat-flat-button class="opp" color="accent" routerLink='/quizhome' >Quiz</button>
         <span class="example-spacer"></span>
         <button mat-button [matMenuTriggerFor]="menu">{{username}} <mat-icon >person
         </mat-icon></button>
@@ -33,4 +24,18 @@
         <button mat-flat-button  target="_blank" routerLink="/">Logout</button>
     </mat-toolbar>  
   <div>
-    <img src="\assets\image\gradhome.jpg" alt="Workplace">
+
+<mat-card>
+    <mat-card-header>
+       <mat-card-title>QUIZ</mat-card-title>
+
+    </mat-card-header>
+    <img mat-card-image src="/assets/image/quiz2.jpg">
+    <mat-card-content>
+        <p>you won't go back to previous question in mcq quiz rules</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button color="primary" routerLink='/quiz'>START</button>
+       
+    </mat-card-actions>
+</mat-card>

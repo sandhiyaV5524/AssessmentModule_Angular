@@ -20,6 +20,9 @@ import { ViewassignmentsubmitComponent } from './viewassignmentsubmit/viewassign
 import { AuthGuard } from './auth.guard'
 import { TrendsComponent } from './trends/trends.component';
 import { GradtrendsComponent } from './gradtrends/gradtrends.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { ResultComponent } from './result/result.component';
+import { QuizhomeComponent } from './quizhome/quizhome.component';
 
 
 
@@ -37,62 +40,61 @@ const routes: Routes = [
      {
       path:'about',
       component: AboutComponent,
-      canActivate: [AuthGuard ]
+     
      },
      {
       path:'trainerhome',
-      component:TrainerhomeComponent,
-      canActivate: [AuthGuard ]
+      component:TrainerhomeComponent
+     
      },
      {
       path:'gradhome',
-      component:GradhomeComponent,
-      canActivate: [AuthGuard ]
+      component:GradhomeComponent
+      
      },
      {
       path:'candidate',
-      component:CandidateComponent,
-      canActivate: [AuthGuard ]
-     },
+      component:CandidateComponent
+         },
      {
       path:'trainerproject',
-      component:TrainerprojectComponent,
-      canActivate: [AuthGuard ]
+      component:TrainerprojectComponent
+     
      },
      {
       path:'createproject',
-      component: CreateprojectComponent,
-      canActivate: [AuthGuard ]
+      component: CreateprojectComponent
+      
      },
      {
       path:'trainerassignment',
-      component:TrainerassignmentComponent,
-      canActivate: [AuthGuard ]
+      component:TrainerassignmentComponent
+      
      },
      {
       path:'gradassignment',
-      component:GradassignmentComponent,
-      canActivate: [AuthGuard ]
+      component:GradassignmentComponent
+   
      },
      {
       path:'assignment',
-      component:AssignmentComponent,
-      canActivate: [AuthGuard ]
+      component:AssignmentComponent
+      
      },
      {
       path:'submitproject',
-      component:SubmitprojectComponent,
-      canActivate: [AuthGuard ]
+      component:SubmitprojectComponent
+     
      },
      {
       path:'gradproject',
-      component:GradprojectComponent,
-      canActivate: [AuthGuard ]
+      component:GradprojectComponent
+      
      },
      {
       path:'viewprojectsubmit',
-      component:ViewprojectsubmitComponent,
-      canActivate: [AuthGuard ]
+      component:ViewprojectsubmitComponent
+      
      },
      {
       path:'generateprojectscore',
@@ -101,8 +103,8 @@ const routes: Routes = [
      },
      {
       path:'scoreboard',
-      component:ScoreboardComponent,
-      canActivate: [AuthGuard ]
+      component:ScoreboardComponent
+     
      },
     
      {
@@ -113,13 +115,28 @@ const routes: Routes = [
     
      {
       path:'trends',
-      component:TrendsComponent,
-      canActivate: [AuthGuard ]
+      component:TrendsComponent
+      
      },
      {
       path:'gradtrends',
       component:GradtrendsComponent,
       canActivate: [AuthGuard ]
+     },
+     {
+      path:'quiz',
+      component:QuizComponent
+      
+     },
+     {
+      path:'quizhome',
+      component:QuizhomeComponent
+      
+     },
+     {
+      path:'result',
+      component:ResultComponent
+      
      }
      
      

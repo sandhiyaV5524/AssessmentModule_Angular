@@ -1,9 +1,25 @@
+<script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"> </script>
 
-  <div class="col-md-6">
+<!--
+<div>
+  <form>
+      Project title<br>
+      <input type="text" class="input_field" name="title"  required><br>
+      Project Description<br>
+      <input type="text" class="input_field" name="description" required ><br><br>
+      <button type="submit" >Save</button><br><br>
+  </form>
+</div>
+
+  
+    -->
+  
+  
+    <div class="col-md-6">
     <h2 class="text-center">Create Project</h2>
     <form>
      <div >
-        <label for="title">Title:</label>
+        <label for="title"> <b>Title:</b></label>
         <input type="text" class="form-control"  placeholder="Enter title" name="title"  [(ngModel)]="pro.title"  required
         #title="ngModel" [class.is-invalid]="title.invalid && title.touched">
         <small class="text-danger" [class.d-none]="title.valid || title.untouched">title is required </small>
@@ -41,4 +57,3 @@
    
     
     </div>
-    

@@ -31,18 +31,27 @@
        <span class="example-spacer1"></span>
         <button mat-flat-button  target="_blank" routerLink="/">Logout</button>
     </mat-toolbar>  
-  <div>
+    <div class="container" role="main">
+
+        <div  class="center-block text-center">
+  
+                    <button type="submit" class="btn btn-info btn-sm" (click)="createproject()">Create project</button>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="submit" class="btn btn-success btn-sm" (click)="viewsubmit()">View Submissions</button>
+               
+    </div>
+</div>
     
-    <div class="test-header">
+<!--    <div class="test-header">
         <div class="example-section">
-        
-        <button class="btn btn-primary mr-2" (click)="createproject()">Create project</button>
+            
+        <button class="btn btn-info btn-sm" (click)="createproject()">Create project</button>
         
         <button class="btn btn-primary mr-2" (click)="viewsubmit()">View Submissions</button>
 </div>
 </div>
 
-    </div>
+    </div>-->
 
    <br>
 

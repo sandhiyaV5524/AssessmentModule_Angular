@@ -9,6 +9,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AgGridModule } from 'ag-grid-angular';
@@ -42,9 +43,13 @@ import { MatDialogModule,MatDialogConfig,MatDialog } from '@angular/material/dia
 import { GenerateassignmentscoreComponent } from './generateassignmentscore/generateassignmentscore.component';
 import { MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 import { AuthBasicAuthInterceptor } from './auth-basic-auth-interceptor';
 import { TrendsComponent } from './trends/trends.component';
 import { GradtrendsComponent } from './gradtrends/gradtrends.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { ResultComponent } from './result/result.component';
+import { QuizhomeComponent } from './quizhome/quizhome.component';
 
 
 
@@ -73,6 +78,9 @@ import { GradtrendsComponent } from './gradtrends/gradtrends.component';
     GenerateassignmentscoreComponent,
     TrendsComponent,
     GradtrendsComponent,
+    QuizComponent,
+    ResultComponent,
+    QuizhomeComponent,
    
   ],
   imports: [
@@ -92,7 +100,8 @@ import { GradtrendsComponent } from './gradtrends/gradtrends.component';
     MatFormFieldModule,
     MatDialogModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule
   
     
   ],

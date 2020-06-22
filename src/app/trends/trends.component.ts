@@ -12,10 +12,20 @@ export class TrendsComponent implements OnInit {
   constructor(private service: UserService) { }
   view: any[] = [600, 400];
   trends:any;
-  single;
+  multi;
   single2;
+  single;
  
 
+  // options
+ 
+  xAxisLabell = 'Country';
+
+  yAxisLabell = 'Population';
+
+  colorSchemee = {
+    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+  };
 
   showXAxis = true;
   showYAxis = true;
@@ -40,17 +50,52 @@ export class TrendsComponent implements OnInit {
   showLabels = true;
 
   ngOnInit():void {
+  /*  this.service.chartLocation().subscribe((trends:any[])=> {
+      console.log(trends)
+      let data:any[]=[];
+      for (let trend of trends){
+        data.push(
+          [
+            {
+          "name":trend.mark,
+          "series": [
+            {
+              "name": "project mark",
+          "value":trend.count
+            },
+            {
+              "name": "assignment mark",
+              "value":trend.count1
+            }
+          
+          ]
+        }
+      ]
+        )
+      }
+      this.multi=data;
+      
+    });
+    */
+
+    
     this.service.chartLocation().subscribe((trends:any[])=> {
       console.log(trends)
       let data:any[]=[];
       for (let trend of trends){
-        data.push({
-          "name":trend.mark,
-          "value":trend.count
-        })
-      }
+        data.push(
+          
+          {
+        "name":trend.mark,
+        "value":trend.count
+          }
+      )
+    }
+    
       this.single=data;
+      
     });
+    
 
     this.service.chartAssignmentMark().subscribe((trends2:any[])=> {
       console.log(trends2)
@@ -63,6 +108,5 @@ export class TrendsComponent implements OnInit {
       }
       this.single2=data;
     });
-
   }
-}
+  }
