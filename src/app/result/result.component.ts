@@ -32,7 +32,7 @@ handleresponse(response){
   if(response=="updated score"){
     alert("Score Updation Successful");
     
-  this.router.navigate(['/gradhome']);
+  this.router.navigate(['/quizhome']);
   
   }
   else{

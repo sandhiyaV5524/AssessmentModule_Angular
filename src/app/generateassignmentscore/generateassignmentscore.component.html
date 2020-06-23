@@ -13,7 +13,7 @@
 	<form >
 	  
         <div class="form-group">
-            <label for="assignment_mark">Total:</label>
+            <label for="assignment_mark" style="font-size:20px">Total:</label>
             <input type="text" class="form-control"  placeholder="mark for assignment" name="assignment_mark"  [(ngModel)]="candidate.assignment_mark"  required
             #assignment_mark="ngModel" [class.is-invalid]="assignment_mark.invalid && assignment_mark.touched">
             <small class="text-danger" [class.d-none]="assignment_mark.valid || assignment_mark.untouched">Enter the Score </small>

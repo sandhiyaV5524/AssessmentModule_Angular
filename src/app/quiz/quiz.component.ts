@@ -61,7 +61,7 @@ export class QuizComponent implements OnInit {
   quit() {
     localStorage.clear();
     clearInterval(this.quizService.timer);
-    this.router.navigate(['/gradhome']);
+    this.router.navigate(['/quizhome']);
   }
 
 

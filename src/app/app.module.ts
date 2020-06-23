@@ -50,6 +50,7 @@ import { GradtrendsComponent } from './gradtrends/gradtrends.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { ResultComponent } from './result/result.component';
 import { QuizhomeComponent } from './quizhome/quizhome.component';
+import { AddquestionComponent } from './addquestion/addquestion.component';
 
 
 
@@ -81,6 +82,7 @@ import { QuizhomeComponent } from './quizhome/quizhome.component';
     QuizComponent,
     ResultComponent,
     QuizhomeComponent,
+    AddquestionComponent,
    
   ],
   imports: [

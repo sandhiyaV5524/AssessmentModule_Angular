@@ -75,13 +75,16 @@ export class TrainerassignmentComponent implements OnInit {
   
   handleSuccessfulResponse(response)
   {
-      if(response=="Assignment is deleted successfully"){
+      if(response=="Assignment Deleted Successfully"){
+        alert("Assignment Deleted");
         console.log(response);
       }
-      else
+      else{
+        alert("Something wen't wrong");
       console.log("Can't be deleted");
       this.router.navigate(['/trainerassignment']);
   }
+}
   viewsubmit(){
     console.log("Assignment submission");
     this.router.navigate(['/viewassignmentsubmit']);

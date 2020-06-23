@@ -41,6 +41,7 @@ showcandidatelist(){
           this.addrow["emailId"]=allcandidate.emailId;
           this.addrow["project_mark"]=allcandidate.project_mark;
           this.addrow["assignment_mark"]=allcandidate.assignment_mark;
+          this.addrow["quiz_mark"]=allcandidate.quiz_mark;
           this.rowData=this.rowData.concat(this.addrow);
           this.addrow={};
       }
@@ -49,7 +50,8 @@ showcandidatelist(){
         {headerName: 'Name', field: 'name' },
         {headerName: 'Email-id', field: 'emailId'},
         {headerName: 'Project Mark', field: 'project_mark'},
-        {headerName: 'Assignment Mark', field: 'assignment_mark'}
+        {headerName: 'Assignment Mark', field: 'assignment_mark'},
+        {headerName: 'Quiz Mark', field: 'quiz_mark'}
       ];
     });
  

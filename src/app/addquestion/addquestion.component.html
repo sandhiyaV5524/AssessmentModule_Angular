@@ -1,0 +1,68 @@
+<mat-card>         
+    <mat-card-content>  
+                    <form>     
+                      <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>OpportunityId</mat-label>
+                        <input  matInput type="number"  placeholder="OpportunityId" formControlName="oid"  name="oid"   required>
+                    </mat-form-field> 
+                      &nbsp;&nbsp;
+                    
+                      <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>OppurtunityDescription</mat-label>
+                        <input  matInput  placeholder="Description" formControlName="description" name="description"   required>
+                     </mat-form-field>    
+                     <br>
+                    <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Location</mat-label>
+                    <input  matInput  placeholder="Location" formControlName="location" name="location"   required>
+                     </mat-form-field>     
+                     &nbsp;&nbsp;
+                      <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Skills</mat-label>
+                        <input  matInput  placeholder="Skills" formControlName="skills" name="skills"  required>
+                     </mat-form-field> 
+                     <br>          
+                      <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>OpeningCount</mat-label>
+                        <input  matInput type="number"  placeholder="OpeningCount" formControlName="openingcount"  name="openingcount"  required>
+                     </mat-form-field>
+                     &nbsp;&nbsp;
+                    <mat-form-field class="full-width" appearance="outline">
+                      <mat-label>ProjectDuration</mat-label>
+                      <input  matInput type="number"  placeholder="ProjectDuration in Days" formControlName="projectduration" name="projectduration"  required>
+                   </mat-form-field>
+                    
+                   <br>
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>LastDate</mat-label>
+                    <input  matInput  placeholder="LastDate" formControlName="lastdate" name="lastdate"  required>
+                 </mat-form-field>
+                 &nbsp;&nbsp;
+            
+                  <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Experience</mat-label>
+                    <input  matInput  placeholder="Experience" formControlName="experience" name="experience"   required>
+                 </mat-form-field> 
+                 <br>
+  
+                 <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>ManagerName</mat-label>
+                  <input  matInput  placeholder="ManagerName" formControlName="managername" name="managername"   required>
+               </mat-form-field> 
+               &nbsp;&nbsp;
+               
+                 <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>ManagerEmail</mat-label>
+                  <input  matInput type="email"  formControlName="manageremail" placeholder="ManagerEmail" name="manageremail"  required>
+                  
+                </mat-form-field>
+              
+            
+           
+               
+              <br>     
+              <a routerLink="/viewtrends"> <button mat-raised-button color="primary" >Create</button></a> &nbsp;&nbsp;&nbsp;   
+                        <button mat-raised-button color="primary" type="reset">Clear</button>    
+              </form>
+    </mat-card-content>    
+  </mat-card> 
