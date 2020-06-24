@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Candidate } from '../model/candidate';
+import { Question } from '../model/question';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuizService {
+  
   qns: any[];
   seconds: number;
   timer;
@@ -33,6 +35,10 @@ export class QuizService {
    // body.Score = this.correctAnswerCount;
    // body.TimeSpent = this.seconds;
     return this.http.put(environment.baseUrl + "quiz/updatescore", candidate,{responseType: 'text' as 'json'});
+  }
+
+  addqn(que: Question) {
+    return this.http.post(environment.baseUrl+"quiz/addquestion",que,{responseType: 'text' as 'json'})
   }
 
   

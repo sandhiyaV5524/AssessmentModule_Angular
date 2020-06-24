@@ -13,6 +13,7 @@ export class ResultComponent implements OnInit {
   username=localStorage.getItem('username');
   email=localStorage.getItem('useremail');
   candidate= new Candidate(0,"","",0,0,0);
+
   constructor(public router: Router,public quizService: QuizService, public sharedservice: SharedService) { }
 
   ngOnInit(): void {
@@ -29,18 +30,18 @@ export class ResultComponent implements OnInit {
   });
 }
 handleresponse(response){
-  if(response=="updated score"){
+  //if(response=="updated score"){
     alert("Score Updation Successful");
     
   this.router.navigate(['/quizhome']);
   
-  }
-  else{
+ // }
+ /* else{
     alert("OOPS something went wrong");
    
   this.router.navigate(['/result']);
  
-  }
+  }*/
 }
 restart() {
   localStorage.setItem('qnProgress', "0");

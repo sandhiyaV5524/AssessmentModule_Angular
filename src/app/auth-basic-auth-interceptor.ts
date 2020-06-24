@@ -4,18 +4,17 @@ import { Observable } from 'rxjs';
 import { UserService } from './shared/user.service';
 
 @Injectable()
-export class AuthBasicAuthInterceptor implements HttpInterceptor{
-    private service : UserService;
-    emailid : string;
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        this.emailid = localStorage.getItem('useremail');
-        console.log("interceptor"+this.emailid);
-     const modifiedReq = req.clone({
-      headers: new HttpHeaders({
-        'authemail': this.emailid
-      })
-    });
-    return next.handle(modifiedReq);
+export class AuthBasicAuthInterceptor {
+  private service : UserService;
+  emailid : string;
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+      this.emailid = localStorage.getItem('useremail');
+      console.log("interceptor"+this.emailid);
+   const modifiedReq = req.clone({
+    headers: new HttpHeaders({
+      'authemail': this.emailid
+    })
+  });
+  return next.handle(modifiedReq);
+}
   }
-    }
-

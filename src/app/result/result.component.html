@@ -1,3 +1,29 @@
+
+
+<div style="height: 100vh;">
+  <mat-toolbar color="basic">
+     
+      <button mat-flat-button class="opp" color="accent" routerLink='/gradassignment'>Assignments</button>
+      <span class="example-spacer1"></span>
+      <button mat-flat-button  class="opp" color="accent" routerLink='/gradproject' >Projects</button>
+      <span class="example-spacer1"></span>
+      <button mat-flat-button class="opp" color="accent" routerLink='/scoreboard' >Score Board</button>
+      <span class="example-spacer1"></span>
+     
+      <button mat-flat-button class="opp" color="accent" routerLink='/quizhome' >Quiz</button>
+      <span class="example-spacer1"></span>
+      <button mat-flat-button class="opp" color="accent" routerLink='/gradtrends' >Trends</button>
+      <span class="example-spacer"></span>
+      <button mat-button [matMenuTriggerFor]="menu">{{username}} <mat-icon >person
+      </mat-icon></button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>{{email}}</button>
+      </mat-menu>
+     <span class="example-spacer1"></span>
+      <button mat-flat-button  target="_blank" routerLink="/">Logout</button>
+  </mat-toolbar>  
+<div>
+
 <div class="row">
     <div class="col s8 offset-s2">
       <h2 class="header">Completed!</h2>

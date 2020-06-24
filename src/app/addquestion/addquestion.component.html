@@ -1,68 +1,72 @@
-<mat-card>         
-    <mat-card-content>  
-                    <form>     
-                      <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>OpportunityId</mat-label>
-                        <input  matInput type="number"  placeholder="OpportunityId" formControlName="oid"  name="oid"   required>
-                    </mat-form-field> 
-                      &nbsp;&nbsp;
-                    
-                      <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>OppurtunityDescription</mat-label>
-                        <input  matInput  placeholder="Description" formControlName="description" name="description"   required>
-                     </mat-form-field>    
-                     <br>
-                    <mat-form-field class="full-width" appearance="outline">
-                    <mat-label>Location</mat-label>
-                    <input  matInput  placeholder="Location" formControlName="location" name="location"   required>
-                     </mat-form-field>     
-                     &nbsp;&nbsp;
-                      <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>Skills</mat-label>
-                        <input  matInput  placeholder="Skills" formControlName="skills" name="skills"  required>
-                     </mat-form-field> 
-                     <br>          
-                      <mat-form-field class="full-width" appearance="outline">
-                        <mat-label>OpeningCount</mat-label>
-                        <input  matInput type="number"  placeholder="OpeningCount" formControlName="openingcount"  name="openingcount"  required>
-                     </mat-form-field>
-                     &nbsp;&nbsp;
-                    <mat-form-field class="full-width" appearance="outline">
-                      <mat-label>ProjectDuration</mat-label>
-                      <input  matInput type="number"  placeholder="ProjectDuration in Days" formControlName="projectduration" name="projectduration"  required>
-                   </mat-form-field>
-                    
-                   <br>
-                  <mat-form-field class="full-width" appearance="outline">
-                    <mat-label>LastDate</mat-label>
-                    <input  matInput  placeholder="LastDate" formControlName="lastdate" name="lastdate"  required>
-                 </mat-form-field>
-                 &nbsp;&nbsp;
-            
-                  <mat-form-field class="full-width" appearance="outline">
-                    <mat-label>Experience</mat-label>
-                    <input  matInput  placeholder="Experience" formControlName="experience" name="experience"   required>
-                 </mat-form-field> 
-                 <br>
+
+
+
+<div class="col-md-6">
+  <h2 class="text-center" class="form-group" class="centered">Add Quiz Questions</h2>
+  <form #createform="ngForm">
+
+    
+      
+     
+     
+
+    
   
-                 <mat-form-field class="full-width" appearance="outline">
-                  <mat-label>ManagerName</mat-label>
-                  <input  matInput  placeholder="ManagerName" formControlName="managername" name="managername"   required>
-               </mat-form-field> 
-               &nbsp;&nbsp;
+   <div class="form-group">
+      <label for="qn" style="font-size:20px">Question:</label>
+      <input type="text" class="form-control"  placeholder="Enter Question" name="qn"  [(ngModel)]="que.qn"  required
+      #qn="ngModel" [class.is-invalid]="qn.invalid && qn.touched">
+      <small class="text-danger" [class.d-none]="qn.valid || qn.untouched">Question is required </small>
+       </div> 
+      
+      
+
+
+
+        <div class="form-group">
+          <label for="op1" style="font-size:20px">Option 1:</label>
+          <input type="text"  class="form-control"  placeholder="Enter Option" name="op1"  [(ngModel)]="que.op1"  required
+          #op1="ngModel" [class.is-invalid]="op1.invalid && op1.touched">
+          <small class="text-danger" [class.d-none]="op1.valid || op1.untouched">Option 1 is required </small>
+          </div>
+          <div class="form-group">
+            <label for="op2" style="font-size:20px">Option 2:</label>
+            <input type="text"  class="form-control"  placeholder="Enter Option" name="op2"  [(ngModel)]="que.op2"  required
+            #op2="ngModel" [class.is-invalid]="op2.invalid && op2.touched">
+            <small class="text-danger" [class.d-none]="op2.valid || op2.untouched">Option 2 is required </small>
+            </div>
+            <div class="form-group">
+              <label for="op3" style="font-size:20px">Option 3:</label>
+              <input type="text"  class="form-control"  placeholder="Enter Option" name="op3"  [(ngModel)]="que.op3"  required
+              #op3="ngModel" [class.is-invalid]="op3.invalid && op3.touched">
+              <small class="text-danger" [class.d-none]="op3.valid || op3.untouched">Option 3 is required </small>
+              </div>
+              <div class="form-group">
+                <label for="op4" style="font-size:20px">Option 4:</label>
+                <input type="text"  class="form-control"  placeholder="Enter Option" name="op4"  [(ngModel)]="que.op4"  required
+                #op4="ngModel" [class.is-invalid]="op4.invalid && op4.touched">
+                <small class="text-danger" [class.d-none]="op4.valid || op4.untouched">Option 4 is required </small>
+                </div>
                
-                 <mat-form-field class="full-width" appearance="outline">
-                  <mat-label>ManagerEmail</mat-label>
-                  <input  matInput type="email"  formControlName="manageremail" placeholder="ManagerEmail" name="manageremail"  required>
-                  
-                </mat-form-field>
-              
-            
-           
+              <div class="form-group">
+                <label style="font-size:20px">Answer:</label>
+                <select required  #answer="ngModel" [class.is-invalid]="answer.invalid && answer.touched" class="custom-select" name="answer" [(ngModel)]="que.answer">
+                    <option *ngFor="let j of Complete">{{j}}</option>
+                    <small class="text-danger" [class.d-none]="answer.valid || answer.untouched">Please mention the answer</small>
+                </select>
                
-              <br>     
-              <a routerLink="/viewtrends"> <button mat-raised-button color="primary" >Create</button></a> &nbsp;&nbsp;&nbsp;   
-                        <button mat-raised-button color="primary" type="reset">Clear</button>    
-              </form>
-    </mat-card-content>    
-  </mat-card> 
+            </div>
+    
+  
+   
+  <div>
+    <button [disabled]="createform.form.invalid" class="btn btn-success" (click)="addqn()">Add</button>
+    &nbsp;&nbsp; &nbsp;&nbsp;
+    <button  class="float-right" class="btn btn-success" [routerLink]="['/trainerassignment']">Back</button>
+  </div>
+ 
+  </form>
+ 
+  
+  </div>
+  

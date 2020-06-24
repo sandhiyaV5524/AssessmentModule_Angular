@@ -45,7 +45,7 @@ export class QuizComponent implements OnInit {
     //localStorage.setItem('qnProgress', this.quizService.qnProgress.toString());
     
       
-      if (this.quizService.qnProgress == this.quizService.qns.length) {
+      if (this.quizService.qnProgress == 5) {
         clearInterval(this.quizService.timer);
         this.quizService.qns.forEach((e, i) => {
           if (e.ans == e.choice){
