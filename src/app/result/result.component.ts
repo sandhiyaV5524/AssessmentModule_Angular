@@ -30,14 +30,14 @@ export class ResultComponent implements OnInit {
   });
 }
 handleresponse(response){
-  //if(response=="updated score"){
+ // if(response=="updated score"){
     alert("Score Updation Successful");
     
   this.router.navigate(['/quizhome']);
   
- // }
+ //}
  /* else{
-    alert("OOPS something went wrong");
+   alert("OOPS something went wrong");
    
   this.router.navigate(['/result']);
  
@@ -47,7 +47,7 @@ restart() {
   localStorage.setItem('qnProgress', "0");
   localStorage.setItem('qns', "");
   localStorage.setItem('seconds', "0");
-  this.router.navigate(['/gradhome']);
+  this.router.navigate(['/quizhome']);
 }
 
 }
